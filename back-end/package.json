@@ -10,7 +10,8 @@
     "test": "NODE_ENV=test jest -i",
     "build": "tsc && npx prisma generate && npx prisma migrate deploy",
     "start": "node ./dist/src/server.js",
-    "dev": "NODE_ENV=dev nodemon ./src/server.ts"
+    "dev": "NODE_ENV=dev nodemon ./src/server.ts",
+    "E2E" : "NODE_ENV=test nodemon ./src/server.ts"
   },
   "keywords": [],
   "author": "",

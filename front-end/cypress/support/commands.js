@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+/*eslint-disable no-undef */
+Cypress.Commands.add('createData',()=>{
+    cy.request("GET", "http://localhost:5000/test/seed");
+});
+
+Cypress.Commands.add('deleteData', ()=>{
+    cy.request("GET", "http://localhost:5000/test/reset");
+
+})
