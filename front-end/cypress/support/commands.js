@@ -30,5 +30,4 @@ Cypress.Commands.add('createData',()=>{
 
 Cypress.Commands.add('deleteData', ()=>{
     cy.request("GET", "http://localhost:5000/test/reset");
-
-})
+});
