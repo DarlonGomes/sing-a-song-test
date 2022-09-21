@@ -1,9 +1,11 @@
 {
   "name": "typescript-back-template",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
-  "main": "index.js",
+  "main": "./src/server.ts",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "test": "NODE_ENV=test jest -i",
     "build": "tsc && npx prisma generate && npx prisma migrate deploy",
@@ -14,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@ngneat/falso": "^6.1.0",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.5.0",
