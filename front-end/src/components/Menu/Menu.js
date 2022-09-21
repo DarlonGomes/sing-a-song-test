@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -10,17 +11,17 @@ export default function Menu() {
 
   return (
     <StyledMenu>
-      <MenuItem onClick={() => navigate("/")}>
+      <MenuItem onClick={() => navigate("/")} data-cy="home">
         <FaHome />
         Home
       </MenuItem>
 
-      <MenuItem onClick={() => navigate("/top")}>
+      <MenuItem onClick={() => navigate("/top")} data-cy="top">
         <HiTrendingUp />
         Top
       </MenuItem>
 
-      <MenuItem onClick={() => navigate("/random")}>
+      <MenuItem onClick={() => navigate("/random")} data-cy="random">
         <FiShuffle />
         Random
       </MenuItem>

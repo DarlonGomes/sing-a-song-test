@@ -1,3 +1,4 @@
+import React from "react";
 import useRecommendation from "../../../hooks/api/useRecommendation";
 
 import Recommendation from "../../../components/Recommendation";
