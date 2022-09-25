@@ -1,5 +1,5 @@
 import {prisma} from "../../src/database";
-import { randSong } from '@ngneat/falso';
+import { randFullName } from '@ngneat/falso';
 
 export async function disconnectPrisma(){
     await prisma.$disconnect();
@@ -7,7 +7,7 @@ export async function disconnectPrisma(){
 
 export async function bulkData(){
     const data = Array.from({length: 3}).map((_element, index) =>({
-        name: randSong(),
+        name: randFullName(),
         youtubeLink: "https://www.youtube.com/watch?v=3YXUWWZJXpE",
         score: index
     }))
@@ -20,7 +20,7 @@ export async function deleteAll(){
 
 export async function bulkDownvoteData(){
     const data = Array.from({length: 6}).map((_element, index) =>({
-        name: randSong(),
+        name: randFullName(),
         youtubeLink: "https://www.youtube.com/watch?v=3YXUWWZJXpE",
         score: -index
     }))
