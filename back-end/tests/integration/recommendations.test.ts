@@ -1,7 +1,7 @@
-import app from "../src/app";
+import app from "../../src/app";
 import supertest from "supertest";
-import { validObject, invalidObject, getValidId, getTheWorstSongId } from "./factories/recommendationFactory";
-import {deleteAll, disconnectPrisma, bulkData, bulkDownvoteData} from "./factories/scenarioFactory"
+import { insertValidObject, insertInvalidObject, getValidId, getTheWorstSongId } from "../factories/recommendationFactory";
+import {deleteAll, disconnectPrisma, bulkData, bulkDownvoteData} from "../factories/scenarioFactory"
 const server = supertest(app);
 
 beforeEach(async()=>{
@@ -47,17 +47,17 @@ describe("GET recommendations", ()=>{
 
 describe("POST recommendations", ()=>{
     it("SUCCESS: create a request", async()=>{ 
-        const body = validObject()
+        const body = insertValidObject()
         const result = await server.post("/recommendations/").send(body);
         expect(result.status).toBe(201);
     });
     it("FAIL: request with invalid body", async()=>{ 
-        const body = invalidObject()
+        const body = insertInvalidObject()
         const result = await server.post("/recommendations/").send(body);
         expect(result.status).toBe(422);
     });
     it("FAIL: conflict with unique constraint", async()=>{ 
-        const body = validObject()
+        const body = insertValidObject()
         await server.post("/recommendations/").send(body);
         const result = await server.post("/recommendations/").send(body);
         expect(result.status).toBe(409);

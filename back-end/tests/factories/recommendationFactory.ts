@@ -1,15 +1,23 @@
 import app from "../../src/app";
 import supertest from "supertest";
 
-export function validObject(){
+export function insertValidObject(){
     return{
         name:"Ninja Sex Party - Mansion Party",
         youtubeLink:"https://www.youtube.com/watch?v=dNoafUU4Ikw"
       }
 }
 
+export function expectValidObject(){
+    return{
+        id:1,
+        name:"Ninja Sex Party - Mansion Party",
+        youtubeLink:"https://www.youtube.com/watch?v=dNoafUU4Ikw",
+        score: 10
+    }
+}
 
-export function invalidObject(){
+export function insertInvalidObject(){
     return{
         name:"Ninja Sex Party - Mansion Party",
         youtubeLink:"https://www.globo.com"
