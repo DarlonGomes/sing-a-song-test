@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.51% </span>
+                <span class="strong">84.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/33</span>
+                <span class='fraction'>28/33</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>10/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.51% </span>
+                <span class="strong">84.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/33</span>
+                <span class='fraction'>28/33</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -102,66 +102,66 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">type AppErrorTypes = "conflict" | "not_found" | "unauthorized" | "wrong_schema";
 export interface AppError {
   type: AppErrorTypes;
   message: string;
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function isAppError(error: object): error is AppError {</span></span>
-<span class="cstat-no" title="statement not covered" >  return (error as AppError).type !== undefined;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+export function isAppError(error: object): error is AppError {
+  return (error as AppError).type !== undefined;
+}
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function errorTypeToStatusCode(type: AppErrorTypes) {</span></span>
-<span class="cstat-no" title="statement not covered" >  if (type === "conflict") return 409;</span>
-<span class="cstat-no" title="statement not covered" >  if (type === "not_found") return 404;</span>
-<span class="cstat-no" title="statement not covered" >  // if (type === "unauthorized") return 401;</span>
-<span class="cstat-no" title="statement not covered" >  if (type === "wrong_schema") return 422;</span>
-<span class="cstat-no" title="statement not covered" >  return 400;</span>
+export function errorTypeToStatusCode(type: AppErrorTypes) {
+  if (type === "conflict") return 409;
+  if (type === "not_found") return 404;
+  if (type === "unauthorized") <span class="branch-0 cbranch-no" title="branch not covered" >return 401;</span>
+  if (type === "wrong_schema") return 422;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  return 400;</span></span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export function conflictError(message?: string): AppError {
   return { type: "conflict", message: message<span class="branch-0 cbranch-no" title="branch not covered" > ?? "" </span>};
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function notFoundError(message?: string): AppError {</span></span>
-<span class="cstat-no" title="statement not covered" >  return { type: "not_found", message: message ?? "" };</span>
+export function notFoundError(message?: string): AppError {
+  return { type: "not_found", message: message<span class="branch-0 cbranch-no" title="branch not covered" > ?? "" };</span>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function unauthorizedError(message?: string): AppError {</span></span>
+<span class="cstat-no" title="statement not covered" >  return { type: "unauthorized", message: message ?? "" };</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-// export function unauthorizedError(message?: string): AppError {
-//   return { type: "unauthorized", message: message ?? "" };
-// }
-&nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function wrongSchemaError(message?: string): AppError {</span></span>
-<span class="cstat-no" title="statement not covered" >  return { type: "wrong_schema", message: message ?? "" };</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+export function wrongSchemaError(message?: string): AppError {
+  return { type: "wrong_schema", message: message<span class="branch-0 cbranch-no" title="branch not covered" > ?? "" };</span>
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -169,7 +169,7 @@ export function conflictError(message?: string): AppError {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun Sep 25 2022 12:06:57 GMT-0300 (Brasilia Standard Time)
+                at Sun Sep 25 2022 14:21:38 GMT-0300 (Brasilia Standard Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
