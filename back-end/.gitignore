@@ -4,3 +4,4 @@ node_modules
 !.env.example
 .env.test
 package-lock.json
+coverage
