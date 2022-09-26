@@ -291,7 +291,7 @@ Start the server
     npm start
 ```
 
-Open cypress 
+Start Cypress  - ( use E2E tests command in backend )
 
 ```bash
     npx cypress open
