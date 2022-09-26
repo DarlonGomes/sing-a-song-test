@@ -138,9 +138,19 @@ GET /recommendations
 ```http
 GET /recommendations/:id
 ```
+
+#### Request:
+
+| Params             | Type     | Description                        |
+| :--------------- | :------- | :--------------------------------- |
+| `id`         | `integer`| **Required**.          |
+
 ### Example:
 
 `id: 3`
+
+
+
 #### Response:
 
 ```json
@@ -182,6 +192,15 @@ GET /recommendations/random
 ```http
 GET /recommendations/top/:amount
 ```
+
+
+#### Request:
+
+| Params             | Type     | Description                        |
+| :--------------- | :------- | :--------------------------------- |
+| `amount`         | `integer`| **Required**.          |
+
+
 
 ### Example:
 
