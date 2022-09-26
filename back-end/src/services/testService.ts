@@ -23,9 +23,9 @@ function mockRecommendations(){
             score: 12
         },
         {
-            name: "6969 - NSP",
-            youtubeLink: "https://www.youtube.com/watch?v=PvLz5kCVIss",
-            score: 6
+            name: "Naldo Benny ft; Gucci Boy - Brezzy",
+            youtubeLink: "https://www.youtube.com/watch?v=G3MfaXiLV3Y",
+            score: -5
         },
         {
             name: "Cool Patrol - NSP",
@@ -35,7 +35,7 @@ function mockRecommendations(){
         {
             name: "Danny Don't You Know - NSP",
             youtubeLink: "https://www.youtube.com/watch?v=kT8cX2-_7pQ",
-            score: 0
+            score: 9
         },
         {
             name: "First Date - NSP",

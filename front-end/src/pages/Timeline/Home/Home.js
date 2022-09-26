@@ -34,9 +34,10 @@ export default function Home() {
     <>
       <CreateNewRecommendation disabled={loadingCreatingRecommendation} onCreateNewRecommendation={handleCreateRecommendation} />
       {
-        recommendations.map(recommendation => (
+        recommendations.map((recommendation, index) => (
           <Recommendation
             key={recommendation.id}
+            data-cy={"home-recommendation-"+index}
             {...recommendation}
             onUpvote={() => listRecommendations()}
             onDownvote={() => listRecommendations()}
